@@ -6,7 +6,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import HomePage from 'containers/HomePage/Loadable'
 import PromptPage from 'containers/PromptPage/Loadable'
@@ -35,7 +35,7 @@ export default function App() {
       </Helmet>
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/v1/qoocoSessions/learner" component={HomePage} />
         <Route path="/prompt" component={PromptPage} />
         <Route path="/words" component={WordsPage} />
         <Route path="/sentence" component={SentencePage} />
