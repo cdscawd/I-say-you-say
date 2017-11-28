@@ -5,8 +5,8 @@ const SectionContent = styled.section`
   
 `;
 
-const Div = styled.div`
-
+const Ul = styled.ul`
+  padding: 10px 0;
 `;
 
 const Li = styled.li`
@@ -15,27 +15,28 @@ const Li = styled.li`
   padding: 0 5px;
 `;
 
-const P = styled.p`
-  width: 100%;
-  color: #000;
-  font-size: 1.4em;
-  text-align: center;
-`;
-
 const Image = styled(NormalImg)`
-  width: 80%;
-  margin: 0 auto 10px;
+  width: 100%;
+  margin: 0 auto;
   display: block;
   border-radius: 10px;
 `;
 
-const Span = styled.span`
+const P = styled.p`
+  width: 100%;
+  color: #000;
+  font-size: 1em;
+  text-align: center;
+  margin: 10px 0 14px;
 `;
 
 export {
+  Header, 
+  Section,
   SectionContent,
-  Div,
+  Ul,
+  Li,
   Image,
   P,
-  Span,
+  Footer,
 }; 

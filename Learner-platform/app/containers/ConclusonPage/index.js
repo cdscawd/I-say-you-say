@@ -1,7 +1,7 @@
 /*
- * HomePage
+ * ConclusonPage 
  *
- * This is the first thing users see of our App, at the '/' route
+ * 评分
  */
 
 import React from 'react';
@@ -12,68 +12,44 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import injectReducer from 'utils/injectReducer';
-import injectSaga from 'utils/injectSaga';
-import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
-import ReposList from 'components/ReposList';
-import messages from './messages';
-import {Section, Header, SectionContent, H1, Image, P, Div, Span, EvaluateBox, Footer} from './StyleElement';
-import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
+import Article from 'components/Article';
+import { SectionContent, H1, Image, P, Div, Span, EvaluateBox, Title, Star } from './StyleElement';
+import Starpath from 'images/star.png';
 
-export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class ConclusonPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
-    if (this.props.username && this.props.username.trim().length > 0) {
-      this.props.onSubmitForm();
-    }
+    
   }
 
   render() {
-    const { loading, error, repos } = this.props;
-    const reposListProps = {
-      loading,
-      error,
-      repos,
-    };
 
     return (
-      <article>
+      <Article>
         <Helmet>
           <title>Concluson Page</title>
-          <meta name="description" content="A React.js Boilerplate application homepage" />
+          <meta name="description" content=" " />
         </Helmet>
-        <Section>
-          <Header>
-            Concluson talk
-          </Header>
-          {/*<SectionContent>
-            <P>teacher is evaluating now.</P>
-            <P>老师正在给你评分。</P>
-          </SectionContent>*/}
-          <SectionContent>
-            <H1>3.8</H1>
-            <ul>
-              <li>Word: </li>
-              <li>Question: </li>
-              <li>Sentence: </li>
-              <li>SmallTalk: </li>
-              <li>FreeTalk: </li>
-            </ul>
-            <EvaluateBox>不错， 注意单词发音标准，敢于开口练习。</EvaluateBox>
-          </SectionContent>
-          <Footer>
-            对话时间
-          </Footer>
-        </Section>
-      </article>
+        {/*<SectionContent>
+          <P>teacher is evaluating now.</P>
+          <P>老师正在给你评分。</P>
+        </SectionContent>*/}
+        <SectionContent>
+          <H1>3.8</H1>
+          <ul>
+            <li><Title>Word: </Title> <Star src={Starpath} /><Star src={Starpath} /></li>
+            <li><Title>Question: </Title><Star src={Starpath} /><Star src={Starpath} /><Star src={Starpath} /><Star src={Starpath} /><Star src={Starpath} /></li>
+            <li><Title>Sentence: </Title><Star src={Starpath} /><Star src={Starpath} /></li>
+            <li><Title>SmallTalk: </Title><Star src={Starpath} /><Star src={Starpath} /></li>
+            <li><Title>FreeTalk: </Title><Star src={Starpath} /></li>
+          </ul>
+          <EvaluateBox>不错， 注意单词发音标准，敢于开口练习。</EvaluateBox>
+        </SectionContent>
+      </Article>
     );
   }
 }
 
-HomePage.propTypes = {
+ConclusonPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.object,
@@ -88,30 +64,6 @@ HomePage.propTypes = {
   onChangeUsername: PropTypes.func,
 };
 
-export function mapDispatchToProps(dispatch) {
-  return {
-    onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: (evt) => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
-    },
-  };
-}
-
-const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
-});
-
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
-
-const withReducer = injectReducer({ key: 'home', reducer });
-const withSaga = injectSaga({ key: 'home', saga });
-
 export default compose(
-  withReducer,
-  withSaga,
-  withConnect,
-)(HomePage);
+  
+)(ConclusonPage);

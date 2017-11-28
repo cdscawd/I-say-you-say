@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import NormalImg from 'components/Img';
 
-const SectionContent = styled.section`
+const Section = styled.section`
+  
+`;
 
+const SectionContent = styled.section`
 `;
 
 const Div = styled.div`
@@ -26,8 +29,8 @@ const Image = styled(NormalImg)`
 const Span = styled.span`
 `;
 
-
 export {
+  Section,
   SectionContent,
   Div,
   Image,

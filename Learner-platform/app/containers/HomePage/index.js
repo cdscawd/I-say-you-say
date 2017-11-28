@@ -10,61 +10,37 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { createStructuredSelector } from 'reselect';
 
-import injectReducer from 'utils/injectReducer';
-import injectSaga from 'utils/injectSaga';
-import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
-import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
-import CenteredSection from './CenteredSection';
-import Section from './Section';
 import messages from './messages';
-import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
+import Article from 'components/Article';
+import {Section, SectionContent, P, Div} from './StyleElement';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
-    if (this.props.username && this.props.username.trim().length > 0) {
-      this.props.onSubmitForm();
-    }
+   
   }
 
   render() {
-    const { loading, error, repos } = this.props;
-    const reposListProps = {
-      loading,
-      error,
-      repos,
-    };
 
     return (
-      <article>
+      <Article>
         <Helmet>
           <title>Home Page</title>
-          <meta name="description" content="A React.js Boilerplate application homepage" />
+          <meta name="description" content=" " />
         </Helmet>
-        <section>
-          <CenteredSection>
-            <H2>
-              Leson 2A01
-            </H2>
-            <p>
+        <Section>
+          <Div>
+            <P>
               <FormattedMessage {...messages.startProjectHeaderEnglish} />
-            </p>
-            <p>
+            </P>
+            <P>
               <FormattedMessage {...messages.startProjectMessageChinese} />
-            </p>
-          </CenteredSection>
-          <Section>
-            <ReposList {...reposListProps} />
-          </Section>
-        </section>
-      </article>
+            </P>
+          </Div>
+        </Section>
+      </Article>
     );
+    
   }
 }
 
@@ -83,30 +59,6 @@ HomePage.propTypes = {
   onChangeUsername: PropTypes.func,
 };
 
-export function mapDispatchToProps(dispatch) {
-  return {
-    onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: (evt) => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
-    },
-  };
-}
-
-const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
-});
-
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
-
-const withReducer = injectReducer({ key: 'home', reducer });
-const withSaga = injectSaga({ key: 'home', saga });
-
 export default compose(
-  withReducer,
-  withSaga,
-  withConnect,
+  
 )(HomePage);

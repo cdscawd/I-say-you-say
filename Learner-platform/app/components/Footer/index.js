@@ -1,18 +1,15 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Foot, } from './StyleElement';
+
 import A from 'components/A';
 import LocaleToggle from 'containers/LocaleToggle';
-import Wrapper from './Wrapper';
 import messages from './messages';
 
 function Footer() {
   return (
-    <Wrapper>
-      <section>
-        <LocaleToggle />
-      </section>
-    </Wrapper>
+    <Foot> 脚 </Foot>
   );
 }
 

@@ -1,9 +1,6 @@
 /**
- *
  * App
- *
- * This component is the skeleton around the actual pages, and should only
- * contain code that should be seen on all pages. (e.g. navigation bar)
+ * 学习者视图框架
  */
 
 import React from 'react'
@@ -13,7 +10,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import HomePage from 'containers/HomePage/Loadable'
 import PromptPage from 'containers/PromptPage/Loadable'
-import WordPage from 'containers/WordPage/Loadable'
+import WordsPage from 'containers/WordsPage/Loadable'
 import QuestionPage from 'containers/QuestionPage/Loadable'
 import SentencePage from 'containers/SentencePage/Loadable'
 import SmallTalkPage from 'containers/SmallTalkPage/Loadable'
@@ -22,31 +19,36 @@ import ConclusonPage from 'containers/ConclusonPage/Loadable'
 
 import FeaturePage from 'containers/FeaturePage/Loadable'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
+
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
-const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-`
+import {AppWrapper, } from './StyleElement';
 
 export default function App() {
   return (
     <AppWrapper>
       <Helmet
         titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
-      >
+        defaultTitle="React.js Boilerplate">
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
+      <Header />
       <Switch>
-        <Route exact path="/" component={ConclusonPage} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/prompt" component={PromptPage} />
+        <Route path="/words" component={WordsPage} />
+        <Route path="/sentence" component={SentencePage} />
+        <Route path="/question" component={QuestionPage} />
+        <Route path="/smalltalk" component={SmallTalkPage} />
+        <Route path="/freetalk" component={FreeTalkPage} />
+        <Route path="/concluson" component={ConclusonPage} />
+
+
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
+      <Footer/>
     </AppWrapper>
   );
 }

@@ -1,35 +1,8 @@
 import styled from 'styled-components';
 import NormalImg from 'components/Img';
 
-const Header = styled.header`
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  color: #fff;
-  text-align: center;
-  font-size: 1.2em;
-  background-color: red;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-`;
-
-const Section = styled.section`
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding: 20px 10px;
-`;
-
 const SectionContent = styled.section`
-  position: fixed;
-  top: 40px;
-  left: 0;
-  right: 0;
-  bottom: 40px;
-  padding: 0 10px;
-  overflow: scroll;
+ 
 `;
 
 const H1 = styled.h1`
@@ -39,7 +12,6 @@ const H1 = styled.h1`
 `;
 
 const Div = styled.div`
-  padding: 10px 5px;
 `;
 
 const Li = styled.li`
@@ -77,24 +49,23 @@ const Image = styled(NormalImg)`
 const Span = styled.span`
 `;
 
-const Footer = styled.footer`
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  color: #fff;
-  text-align: center;
+const Title = styled.span.attrs({
+  className: 'title',
+})` 
+  display: inline-block;
+  width: 100px;
   font-size: 1.2em;
-  background-color: red;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  vertical-align: bottom;
 `;
 
+const Star = styled(NormalImg)`
+  display: inline-block;
+  height: 28px;
+  margin-right: 4px;
+`;
+
+
 export {
-  Header, 
-  Section,
   SectionContent,
   H1,
   Div,
@@ -102,5 +73,6 @@ export {
   P,
   Span,
   EvaluateBox,
-  Footer,
+  Title,
+  Star
 }; 
