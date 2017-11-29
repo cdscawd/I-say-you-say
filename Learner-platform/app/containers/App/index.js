@@ -26,6 +26,7 @@ import Footer from 'components/Footer'
 import {AppWrapper, } from './StyleElement';
 
 export default function App() {
+  console.log(this)
   return (
     <AppWrapper>
       <Helmet

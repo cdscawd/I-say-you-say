@@ -8,15 +8,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { createStructuredSelector } from 'reselect';
 
 import Article from 'components/Article';
 import { SectionContent, H1, Image, P, Div, Span, EvaluateBox, Title, Star } from './StyleElement';
 import Starpath from 'images/star.png';
 
-export class ConclusonPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export default class ConclusonPage extends React.Component{ // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
     
   }
@@ -48,22 +45,3 @@ export class ConclusonPage extends React.PureComponent { // eslint-disable-line 
     );
   }
 }
-
-ConclusonPage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.bool,
-  ]),
-  repos: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.bool,
-  ]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func,
-};
-
-export default compose(
-  
-)(ConclusonPage);

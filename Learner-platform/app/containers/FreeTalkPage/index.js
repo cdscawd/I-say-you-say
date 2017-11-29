@@ -8,14 +8,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { createStructuredSelector } from 'reselect';
 
 import Article from 'components/Article';
 import { SectionContent, Image, P, Div, Span } from './StyleElement';
 
-export class FreeTalkPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export default class FreeTalkPage extends React.Component{ // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
     
   }
@@ -38,22 +35,3 @@ export class FreeTalkPage extends React.PureComponent { // eslint-disable-line r
     );
   }
 }
-
-FreeTalkPage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.bool,
-  ]),
-  repos: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.bool,
-  ]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func,
-};
-
-export default compose(
- 
-)(FreeTalkPage);

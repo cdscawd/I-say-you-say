@@ -6,13 +6,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 
 import Article from 'components/Article';
 import {Section, P, Div} from './StyleElement';
 
-export class PromptPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export default class PromptPage extends React.Component{ // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
     
   }
@@ -35,22 +33,3 @@ export class PromptPage extends React.PureComponent { // eslint-disable-line rea
     );
   }
 }
-
-PromptPage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.bool,
-  ]),
-  repos: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.bool,
-  ]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func,
-};
-
-export default compose(
-  
-)(PromptPage);

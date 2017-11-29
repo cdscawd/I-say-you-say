@@ -9,7 +9,7 @@ import messages from './messages';
 
 function Footer() {
   return (
-    <Foot> 脚 </Foot>
+    <Foot>footer</Foot>
   );
 }
 
