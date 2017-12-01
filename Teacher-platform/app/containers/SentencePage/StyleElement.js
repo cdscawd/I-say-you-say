@@ -15,6 +15,13 @@ const P = styled.p`
   text-align: center;
 `;
 
+const AnswersP = styled.p`
+  width: 100%;
+  color: #000;
+  font-size: 1.2em;
+  text-align: center;
+`;
+
 const Image = styled(NormalImg)`
   width: 80%;
   margin: 0 auto 10px;
@@ -31,5 +38,6 @@ export {
   Div,
   Image,
   P,
+  AnswersP,
   Span,
 }; 

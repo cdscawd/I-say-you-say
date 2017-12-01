@@ -1,16 +1,19 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { Foot, } from './StyleElement';
+import { OperationArea, NextButton} from './StyleElement';
 
 import A from 'components/A';
 import LocaleToggle from 'containers/LocaleToggle';
 import messages from './messages';
 
-function Footer() {
+function OperationAreaBlock() {
   return (
-    <Foot>footer</Foot>
+    <OperationArea>
+
+      <NextButton>Next</NextButton>
+    </OperationArea>
   );
 }
 
-export default Footer;
+export default OperationAreaBlock;

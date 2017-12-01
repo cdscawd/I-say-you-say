@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet'
 import { FormattedMessage } from 'react-intl'
 
 import Article from 'components/Article'
-import {SectionContent, P, Div} from './StyleElement'
+import {SectionContent, P, Div, Button} from './StyleElement'
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
@@ -33,7 +33,7 @@ export default class HomePage extends React.Component { // eslint-disable-line r
         <SectionContent>
           <Div>
             <P>Introduce yourself and get to know your learner.Start the first exercise when you're ready.</P>
-
+            <Button>Start lesson</Button>
           </Div>
         </SectionContent>
       </Article>

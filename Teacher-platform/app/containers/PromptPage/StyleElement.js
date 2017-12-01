@@ -28,6 +28,9 @@ const Image = styled(NormalImg)`
 
 const Span = styled.span`
 `;
+const Ul = styled.ul`
+
+`;
 
 export {
   Section,
@@ -36,4 +39,5 @@ export {
   Image,
   P,
   Span,
+  Ul
 }; 

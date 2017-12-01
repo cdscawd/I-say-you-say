@@ -20,7 +20,13 @@ const P = styled.p`
   width: 100%;
   color: #000;
   font-size: 1.2em;
-  text-align: center;
+  text-align: left;
+`;
+
+const Button = styled.button.attrs({
+  className: 'button button-caution button-rounded button-giant',
+})`
+  margin: 0 auto;
 `;
 
 export {
@@ -28,4 +34,5 @@ export {
   SectionContent,
   Div,
   P,
+  Button,
 }; 

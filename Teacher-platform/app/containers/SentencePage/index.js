@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import Article from 'components/Article';
-import {SectionContent, Image, P, Div, Span} from './StyleElement';
+import {SectionContent, Image, P, AnswersP, Div, Span} from './StyleElement';
 
 export default class SentencePage extends React.Component{ // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
@@ -28,6 +28,7 @@ export default class SentencePage extends React.Component{ // eslint-disable-lin
         <SectionContent>
           <Div>
             <P>Are <Span>___</Span> a <Span>___</Span> student?</P>
+            <AnswersP>Answers: <Span>you, </Span><Span>good</Span></AnswersP>
             <Image src="http://cn.media.qooco.com/lessonData/common/images/good_at.jpg"/>
           </Div>
         </SectionContent>

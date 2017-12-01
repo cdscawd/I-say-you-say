@@ -27,8 +27,10 @@ export default class ConclusonPage extends React.Component{ // eslint-disable-li
           <meta name="description" content=" " />
         </Helmet>
         {/*<SectionContent>
-          <P>teacher is evaluating now.</P>
-          <P>老师正在给你评分。</P>
+          <H1>Concluson</H1>
+          <P>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde beatae suscipit atque culpa, aspernatur minima ea reprehenderit similique quod. 
+          </P>
         </SectionContent>*/}
         <SectionContent>
           <H1>3.8</H1>

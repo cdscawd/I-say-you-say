@@ -23,7 +23,7 @@ const Li = styled.li`
 const P = styled.p`
   width: 100%;
   color: #000;
-  font-size: 1.4em;
+  font-size: 1.2em;
   text-align: center;
 `;
 
