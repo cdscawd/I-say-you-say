@@ -15,15 +15,7 @@ import {SectionContent, P, Div} from './StyleElement'
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
-    // Pusher.logToConsole = true;
-    // var pusher = new Pusher('7052f955a266270bdcc7', {
-    //   cluster: 'ap1',
-    //   encrypted: true
-    // });
-    // var channel = pusher.subscribe('my-channel');
-    // channel.bind('my-event', function(data) {
-    //   console.log(data.message);
-    // })
+    
   }
   
   // Since state and props are static,
