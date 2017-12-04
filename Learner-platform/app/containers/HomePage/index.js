@@ -9,6 +9,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { FormattedMessage } from 'react-intl'
 
+import PromptPage from 'containers/PromptPage/Loadable'
 import messages from './messages'
 import Article from 'components/Article'
 import {SectionContent, P, Div} from './StyleElement'

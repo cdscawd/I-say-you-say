@@ -25,8 +25,8 @@ const logger = {
 
     console.log(`
       ${chalk.bold('Access URLs:')}${divider}
-      Localhost: ${chalk.magenta(`🚀 http://${host}:${port}`)}
-            LAN: ${chalk.magenta(`🏖 http://${ip.address()}:${port}`) +
+      Localhost: ${chalk.magenta(`🚀 http://${host}:${port}/v1/qoocoSessions/learner?sessionRequestId=58d1b23d602a4a0001e66f33&sessionStartAt=1507073590164&sessionEndAt=1507679587594&lessonSlug=1072_2932_34582&locale=zh_CN`)}
+            LAN: ${chalk.magenta(`🏖 http://${ip.address()}:${port}/v1/qoocoSessions/learner?sessionRequestId=58d1b23d602a4a0001e66f33&sessionStartAt=1507073590164&sessionEndAt=1507679587594&lessonSlug=1072_2932_34582&locale=zh_CN`) +
       (tunnelStarted ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}` : '')}${divider}
       ${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
     `);

@@ -8,15 +8,7 @@ import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import HomePage from 'containers/HomePage/Loadable'
-import PromptPage from 'containers/PromptPage/Loadable'
-import WordsPage from 'containers/WordsPage/Loadable'
-import QuestionPage from 'containers/QuestionPage/Loadable'
-import SentencePage from 'containers/SentencePage/Loadable'
-import SmallTalkPage from 'containers/SmallTalkPage/Loadable'
-import FreeTalkPage from 'containers/FreeTalkPage/Loadable'
-import ConclusonPage from 'containers/ConclusonPage/Loadable'
-
+import WorkSpacePage from 'containers/WorkSpacePage/Loadable'
 import FeaturePage from 'containers/FeaturePage/Loadable'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
 
@@ -24,27 +16,37 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 import {AppWrapper, } from './StyleElement';
+export default class App extends React.Component {
+  componentDidMount() {
+    function GetQueryString(name) {
+      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+      var r = window.location.search.substr(1).match(reg);
+      if(r!=null)return  unescape(r[2]); return null;
+    }
 
-export default function App() {
-  
-  return (
-    <AppWrapper>
-      <Helmet titleTemplate="%s - Qooco VoIP" defaultTitle="Qooco VoIP" />
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/prompt" component={PromptPage} />
-        <Route path="/words" component={WordsPage} />
-        <Route path="/sentence" component={SentencePage} />
-        <Route path="/question" component={QuestionPage} />
-        <Route path="/smalltalk" component={SmallTalkPage} />
-        <Route path="/freetalk" component={FreeTalkPage} />
-        <Route path="/concluson" component={ConclusonPage} />
+    const learnerData = {
+      sessionRequestId: GetQueryString("sessionRequestId"),
+      sessionStartAt: GetQueryString("sessionStartAt"),
+      sessionEndAt: GetQueryString("sessionEndAt"),
+      lessonSlug: GetQueryString("lessonSlug"),
+      locale: GetQueryString("locale")
+    }
 
-        <Route path="/features" component={FeaturePage} />
-        <Route path="" component={NotFoundPage} />
-      </Switch>
-      <Footer/>
-    </AppWrapper>
-  );
+    console.log(learnerData);
+  }
+
+  render() {
+    return (
+      <AppWrapper>
+        <Helmet titleTemplate="%s - Qooco VoIP" defaultTitle="Qooco VoIP" />
+        <Header />
+        <Switch>
+          <Route path="/v1/qoocoSessions/learner" component={WorkSpacePage} />
+          
+          <Route path="" component={NotFoundPage} />
+        </Switch>
+        <Footer/>
+      </AppWrapper>
+    )
+  }
 }

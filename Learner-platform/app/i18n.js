@@ -18,7 +18,6 @@ addLocaleData(deLocaleData);
 
 export const appLocales = [
   'en',
-  'de',
 ];
 
 export const formatTranslationMessages = (locale, messages) => {
@@ -35,5 +34,4 @@ export const formatTranslationMessages = (locale, messages) => {
 
 export const translationMessages = {
   en: formatTranslationMessages('en', enTranslationMessages),
-  de: formatTranslationMessages('de', deTranslationMessages),
 };

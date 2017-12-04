@@ -8,7 +8,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
   render() {
     return (
       <Head> 
-        <HeaderLink to="/v1/qoocoSessions/learner?sessionRequestId=58d1b23d602a4a0001e66f33&sessionStartAt=1507073590164&sessionEndAt=1507679587594&lessonSlug=1072_2932_34582&locale=zh_CN">/</HeaderLink>
+        <HeaderLink to="/">/</HeaderLink>
         <HeaderLink to="/prompt">prompt</HeaderLink>
         <HeaderLink to="/words">words</HeaderLink>
         <HeaderLink to="/sentence">sentence</HeaderLink>
