@@ -31,8 +31,11 @@ export default class WorkSpacePage extends React.Component { // eslint-disable-l
   }
 
   render() {
+
+    let WorkSpacePage = HomePage
+
     return (
-      <HomePage />
+      <WorkSpacePage />
     );
   }
 }

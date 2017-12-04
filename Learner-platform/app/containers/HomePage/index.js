@@ -14,13 +14,11 @@ import messages from './messages'
 import Article from 'components/Article'
 import {SectionContent, P, Div} from './StyleElement'
 
-export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
     
   }
-  
-  // Since state and props are static,
-  // there's no need to re-render this component
+
   shouldComponentUpdate() {
     return false;
   }
@@ -46,3 +44,5 @@ export default class HomePage extends React.Component { // eslint-disable-line r
     );
   }
 }
+
+export default (HomePage);

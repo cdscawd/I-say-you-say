@@ -32,4 +32,15 @@ injectGlobal`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+
+  @keyframes showScoreAnimation {
+    0%   {top: 100%;}
+    50%  {top: 70%;}
+    75%  {top: 70%;}
+    100% {top: 100%;}
+  }
+
+  .show-score-badge{
+    animation: showScoreAnimation 3s;
+  }
 `;

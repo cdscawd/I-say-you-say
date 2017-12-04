@@ -8,11 +8,12 @@ import LocaleToggle from 'containers/LocaleToggle';
 import messages from './messages';
 
 function Footer() {
+  
   return (
     <Foot>
-      <ScoreBadge>优秀</ScoreBadge>
+      <ScoreBadge showScoreBadge={true}>优秀</ScoreBadge>
     </Foot>
-  );
+  )
 }
 
 export default Footer;
